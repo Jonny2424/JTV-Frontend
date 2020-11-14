@@ -26,6 +26,7 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await loginUser(loginData);
     this.setState({ currentUser });
+    this.props.history.push('/requests')
   }
 
   handleLogout = () => {
@@ -53,14 +54,16 @@ class App extends Component {
       <div className="App">
         {this.state.currentUser ?
           <div>
-            <p>Hello {this.state.currentUser.username}</p>
-            <Requests />
+            <h1>Welcome Back {this.state.currentUser.username}!</h1>
+            <Route path="/requests" render={() => {return <Requests />}} />
+            <br></br>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
           :
           <>
             <h1>Admin Login</h1>
             <LoginForm handleLogin={this.handleLogin} />
+            {/* <RegisterForm handleRegister={this.handleRegister}/> */}
           </>
         }
       </div>
