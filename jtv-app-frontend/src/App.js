@@ -5,7 +5,7 @@ import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import Requests from './components/RequestsContainer';
 import { registerUser, loginUser, verifyUser } from './services/auth_api_helper';
-import Header from './components/webpageComponents/Header';
+import Homepage from './components/webpageComponents/Homepage';
 
 
 class App extends Component {
@@ -53,17 +53,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         {this.state.currentUser ?
           <div>
             <h1>Welcome Back {this.state.currentUser.username}!</h1>
-            <Route path="/requests" render={() => {return <Requests />}} />
+            <Route path="/requests" render={() => { return <Requests /> }} />
             <br></br>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
           :
           <>
-            <Route path="/admin" render={() => {return <LoginForm handleLogin={this.handleLogin} />}} />
+            <Route path="/" render={() => { return <Homepage /> }} />
+            <Route path="/admin" render={() => { return <LoginForm handleLogin={this.handleLogin} /> }} />
             {/* <RegisterForm handleRegister={this.handleRegister}/> */}
           </>
         }
