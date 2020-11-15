@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function RequestList(props) {
 
     function renderTableHeader() {
-        let header = ['First Name','Last Name','Email','C.Year', 'C.Make','C.Model','Msg','Req Status','Req Type','Work Type','Created At','Updated At', 'Update Status','Action 2']
+        let header = ['First Name','Last Name','Email','C.Year', 'C.Make','C.Model','Msg','Req Status','Req Type','Work Type','Created At','Updated At', 'Update Status','Delete']
         return header.map((key, index) => {
            return <th key={index}>{key.toUpperCase()}</th>
         })
