@@ -5,6 +5,7 @@ import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import Requests from './components/RequestsContainer';
 import { registerUser, loginUser, verifyUser } from './services/auth_api_helper';
+import Header from './components/webpageComponents/Header';
 
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
   handleLogout = () => {
     localStorage.removeItem('authToken');
     this.setState({ currentUser: null });
-    this.props.history.push('/login');
+    this.props.history.push('/admin');
   }
 
   handleVerify = async () => {
@@ -52,6 +53,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         {this.state.currentUser ?
           <div>
             <h1>Welcome Back {this.state.currentUser.username}!</h1>
@@ -61,11 +63,11 @@ class App extends Component {
           </div>
           :
           <>
-            <h1>Admin Login</h1>
-            <LoginForm handleLogin={this.handleLogin} />
+            <Route path="/admin" render={() => {return <LoginForm handleLogin={this.handleLogin} />}} />
             {/* <RegisterForm handleRegister={this.handleRegister}/> */}
           </>
         }
+
       </div>
     );
   }

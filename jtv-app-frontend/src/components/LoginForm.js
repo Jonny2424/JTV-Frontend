@@ -21,6 +21,8 @@ class LoginForm extends Component {
 
   render() {
     return (
+      <>
+      <h1>Admin Login</h1>
       <form onSubmit={(e) => this.props.handleLogin(e, this.state)}>
         <input
           type="text"
@@ -36,6 +38,7 @@ class LoginForm extends Component {
         />
         <input type="submit" value="Login" />
       </form>
+      </>
     )
   }
 }
