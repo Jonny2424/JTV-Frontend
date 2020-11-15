@@ -5,9 +5,7 @@ class UpdateRequestFrom extends Component {
     super(props);
 
     this.state = {
-      title: "",
-      img: "",
-      body: ""
+        requestStatusId: ''
     }
   }
 
@@ -17,40 +15,26 @@ class UpdateRequestFrom extends Component {
   }
 
   componentDidMount() {
-    const postToEdit = this.props.posts.find(post =>
-                post.id === parseInt(this.props.postId)
+    const requestToEdit = this.props.requests.find(request =>
+                request.id === parseInt(this.props.requestId)
               );
     this.setState({
-      title: postToEdit.title,
-      img: postToEdit.img,
-      body: postToEdit.body
+        requestStatusId: requestToEdit.requestStatusId
     })
   }
 
   render() {
     return (
       <form
-        onSubmit={(e) => this.props.updatePost(e, this.props.postId, this.state)}
+        onSubmit={(e) => this.props.updateRequest(e, this.props.requestId, this.state)}
       >
         <input
           type="text"
-          name="title"
-          value={this.state.title}
+          name="requestStatusId"
+          value={this.state.requestStatusId}
           onChange={this.handleChange}
         />
-        <input
-          type="text"
-          name="img"
-          value={this.state.img}
-          onChange={this.handleChange}
-        />
-        <input
-          type="textarea"
-          name="body"
-          value={this.state.body}
-          onChange={this.handleChange}
-        />
-        <input type="submit" value="Update a Post" />
+        <input type="submit" value="Update Request" />
       </form>
     )
   }

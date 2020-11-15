@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
-import Requests from './components/Requests';
+import Requests from './components/RequestsContainer';
 import { registerUser, loginUser, verifyUser } from './services/auth_api_helper';
 
 
