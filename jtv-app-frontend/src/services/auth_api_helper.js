@@ -16,6 +16,7 @@ export const loginUser = async (loginData) => {
     const resp = await api.post('/auth/login', loginData);
     localStorage.setItem('authToken', resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+    console.log("heyy")
     console.log(resp)
     return resp.data.user;
 }
