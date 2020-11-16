@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { postRequest } from '../services/requests_api_helper';
 import { Formik, Form, Field } from "formik";
-import { Card, CardContent, TextField, MenuItem, Grid, Button } from '@material-ui/core';
+import { TextField, MenuItem, Grid, Button } from '@material-ui/core';
 import * as Yup from "yup";
 
 
@@ -16,10 +18,9 @@ class CreateRequestForm extends Component {
       request_car_make: '',
       request_car_model: '',
       request_msg: '',
-      request_date: null,
+      request_date: '',
       requestTypeId: null,
-      workTypeId: null,
-      notARobot: false,
+      workTypeId: 1
     }
   }
 
@@ -28,11 +29,19 @@ class CreateRequestForm extends Component {
     this.setState({ [name]: value });
   }
 
+  createRequest = async (requestData) => {
+    postRequest(requestData);
+    this.props.history.push('/')
+  }
+
 
   render() {
     return (
       <div>
-          <Formik initialValues={this.state} onSubmit={() => { }}>
+          <Formik initialValues={this.state} onSubmit={(values) => {
+            console.log(values)
+            this.createRequest(values)
+          }}>
             {({ values }) => (
               <Form>
                 <Grid container xs="12" spacing="2">
@@ -60,12 +69,6 @@ class CreateRequestForm extends Component {
                     <label>
                       <Field type="radio" name="requestTypeId" value="2" />
                       {"   " + "Schedule a Detail"}
-                    </label>
-                  </Grid>
-                  <Grid item>
-                    <label>
-                      <Field type="checkbox" name="notARobot" />
-                      {" Not a robot?"}
                     </label>
                   </Grid>
                   {values.requestTypeId === "2" ?
@@ -121,4 +124,4 @@ class CreateRequestForm extends Component {
   }
 }
 
-export default CreateRequestForm;
+export default withRouter(CreateRequestForm);

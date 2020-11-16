@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link, Route } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import { getRequests, destroyRequest, putRequest } from '../services/requests_api_helper';
 import RequestList from './RequestList';
 import UpdateRequestForm from './UpdateRequestForm';
@@ -25,17 +25,12 @@ class Requests extends Component {
     }
 
     updateRequest = async (e, id, requestData) => {
-        console.log(id)
-        console.log(requestData)
         e.preventDefault();
         const updatedRequest = await putRequest(id, requestData);
-        const requests = this.state.requests;
-        const newRequests = requests.map(request => request.id === parseInt(id) ? updatedRequest : request);
-        this.setState({
-            requests: newRequests
-        })
+        this.listRequests();
         this.props.history.push('/requests');
     }
+
 
     componentDidMount() {
         this.listRequests();
@@ -45,7 +40,7 @@ class Requests extends Component {
         return (
             <div>
                 <Route exact path="/requests" render={() => (
-                    <RequestList requests={this.state.requests} />
+                    <RequestList requests={this.state.requests} deleteRequests={this.deleteRequests}/>
                 )} />
                 <Route path="/requests/:id/update" render={(props) => (
                     <UpdateRequestForm

@@ -43,7 +43,6 @@ class App extends Component {
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser });
-      // this.props.history.push('/posts');
     }
   }
 

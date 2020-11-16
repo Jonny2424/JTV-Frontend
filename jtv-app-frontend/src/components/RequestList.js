@@ -28,7 +28,7 @@ export default function RequestList(props) {
                         <td>{item.createdAt}</td>
                         <td>{item.updatedAt}</td>
                         <td><Link to={`/requests/${item.id}/update`}><button>Update</button></Link></td>
-                        <td><button onClick={() => this.deleteRequests(item.id)}>Delete</button></td>
+                        <td><button onClick={() => props.deleteRequests(item.id)}>Delete</button></td>
                 </tr>
             )
         })
