@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body .bg-dark {
+  background-color: #239526!important;
+}
+
 #title {
   text-align: left;
   font-family: arial, sans-serif;
@@ -31,4 +35,74 @@
   text-align: center;
   background-color: #4CAF50;
   color: white;
+}
+
+.navbar {
+  height: 8vh;
+}
+
+.ml-auto {
+  margin-right: 2vw;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://besthqwallpapers.com/Uploads/4-12-2018/73334/thumb2-bmw-m3-blue-sedan-turquoise-m3-exterior-tuning-m3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-weight: bold;
+  margin-top: 10vh;
+  margin-bottom: 10vh!important;
+  color: white;
+  height: 50vh;
+}
+
+.inside-jumbotron {
+  background-color: rgba(192, 192, 192, 0.568);
+  padding: 30px;
+  width: 60%;
+  border-radius: 10px;
+}
+
+.container {
+width: 50vw;
+}
+
+.card-container {
+  padding: 10vh;
+}
+
+.card-container h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 10vh;
+}
+
+
+.card-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25vh;
+  height: 27vh;
+  width: 27vh;
+  background-color:#4CAF50;
+  border-radius: 50%;
+}
+
+
+.holder {
+text-align: center;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none!important;
 }
