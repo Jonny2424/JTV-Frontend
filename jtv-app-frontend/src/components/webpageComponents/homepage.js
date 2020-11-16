@@ -13,7 +13,6 @@ export default function homepage() {
                         <p>
                             Have confidence knowing your car is protected during this winter season
                         </p>
-                        <Button>Schedule Now!</Button>
                     </div>
                 </Jumbotron>
             </div>
@@ -31,7 +30,7 @@ export default function homepage() {
                         <Card.Body>
                             <Card.Title style={{ fontSize: '30px', fontWeight: 'bold' }}>Plan</Card.Title>
                         </Card.Body>
-                        <Button variant="primary">Schedule Now!</Button>
+                        <Button variant="outline-success" href="/contact">Schedule Now!</Button>
                     </Card>
                     <Card style={{ width: '18rem' }}>
                         <div className="card-step"><div className="holder">3</div></div>
