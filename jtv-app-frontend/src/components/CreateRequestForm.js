@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field } from "formik";
-import { Card, CardContent, TextField, FormControl, FormLabel, RadioGroup, FormControlLabel } from '@material-ui/core';
+import { Card, CardContent, TextField, MenuItem, Grid, Button } from '@material-ui/core';
 import * as Yup from "yup";
+
 
 class CreateRequestForm extends Component {
   constructor(props) {
@@ -19,7 +20,6 @@ class CreateRequestForm extends Component {
       requestTypeId: null,
       workTypeId: null,
       notARobot: false,
-
     }
   }
 
@@ -28,52 +28,95 @@ class CreateRequestForm extends Component {
     this.setState({ [name]: value });
   }
 
+
   render() {
     return (
-      <Card>
-        <CardContent>
+      <div>
           <Formik initialValues={this.state} onSubmit={() => { }}>
             {({ values }) => (
               <Form>
-                <Field name="request_Fname" as={TextField} label="First Name" />
-                <Field name="request_Lname" as={TextField} label="Last Name" />
-                <Field name="request_email" as={TextField} label="Email" />
-                <Field name="request_car_year" type="number" as={TextField} label="Car Year" />
-                <Field name="request_car_make" as={TextField} label="Car Make" />
-                <Field name="request_car_model" as={TextField} label="Car Model" />
-                <Field name="request_msg" as={TextField} label="Message" multiline rows={5} />
-                <label>
-                  <Field type="radio" name="requestTypeId" value="1" />
-              Request Info
-            </label>
-                <label>
-                  <Field type="radio" name="requestTypeId" value="2" />
-              Schedule a Detail
-            </label>
-                {values.requestTypeId === "2" ? <TextField
-                  id="date"
-                  label="Preferred Dropoff"
-                  type="date"
-                  defaultValue="mm/dd/yyyy"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                /> : null}
-                <Field name="workTypeId" as="select">
-                  <option defaultValue>Select One</option>
-                  <option value={1}>Bronze</option>
-                  <option value={2}>Silver</option>
-                  <option value={3}>Gold</option>
-                </Field>
-                <Field type="checkbox" name="notARobot" />
-                
-
-                <pre>{JSON.stringify(values, null, 4)}</pre>
+                <Grid container xs="12" spacing="2">
+                  <Grid item>
+                    <Field name="request_Fname" as={TextField} variant="outlined" label="First Name" />
+                  </Grid>
+                  <Grid item>
+                    <Field name="request_Lname" as={TextField} variant="outlined" label="Last Name" />
+                  </Grid>
+                  <Grid item>
+                    <Field name="request_email" as={TextField} variant="outlined" label="Email" />
+                  </Grid>
+                  <Grid item>
+                    <Field name="request_msg" as={TextField} variant="outlined" label="Message" multiline rows={1} rowsMax={8} />
+                  </Grid>
+                </Grid>
+                <Grid container xs="12" spacing="2">
+                  <Grid item>
+                    <label>
+                      <Field type="radio" name="requestTypeId" value="1" />
+                      {"   " + "Request Info"}
+                    </label>
+                  </Grid>
+                  <Grid item>
+                    <label>
+                      <Field type="radio" name="requestTypeId" value="2" />
+                      {"   " + "Schedule a Detail"}
+                    </label>
+                  </Grid>
+                  <Grid item>
+                    <label>
+                      <Field type="checkbox" name="notARobot" />
+                      {" Not a robot?"}
+                    </label>
+                  </Grid>
+                  {values.requestTypeId === "2" ?
+                    <>
+                      <Grid container xs="12" spacing="2" margin-bottom="9">
+                        <Grid item>
+                          <Field name="request_car_year" type="number" as={TextField} variant="outlined" label="Car Year" />
+                        </Grid>
+                        <Grid item>
+                          <Field name="request_car_make" as={TextField} variant="outlined" label="Car Make" />
+                        </Grid>
+                        <Grid item>
+                          <Field name="request_car_model" as={TextField} variant="outlined" label="Car Model" />
+                        </Grid>
+                        <Grid item>
+                          <Field
+                            as={TextField}
+                            label="Preferred Drop Off"
+                            name="request_date"
+                            type="date"
+                            variant="outlined"
+                            defaultValue="mm/dd/yyyy"
+                            InputLabelProps={{
+                              shrink: true,
+                            }} />
+                        </Grid>
+                        <Grid item>
+                          <Field name="workTypeId" as={TextField} variant="outlined" label="Package" select style={{ "width": "8vw" }}>
+                            <MenuItem defaultValue>Select One</MenuItem>
+                            <MenuItem value={1}>Bronze</MenuItem>
+                            <MenuItem value={2}>Silver</MenuItem>
+                            <MenuItem value={3}>Gold</MenuItem>
+                          </Field>
+                        </Grid>
+                      </Grid>
+                    </>
+                    : null}
+                    <Grid container xs="12" spacing="2" style={{ "marginTop": 10 }}>
+                      <Grid item >
+                    <Button type="submit" variant="outlined" color="success">
+                  Submit!
+                </Button>
+                    </Grid>
+                    
+                </Grid>
+                </Grid>
+                {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
               </Form>
             )}
           </Formik>
-        </CardContent>
-      </Card>
+          </div>
     )
   }
 }
