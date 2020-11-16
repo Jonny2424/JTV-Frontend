@@ -37,6 +37,13 @@ body .bg-dark {
   color: white;
 }
 
+.updateRequestForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   height: 8vh;
 }
