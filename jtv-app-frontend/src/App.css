@@ -303,3 +303,16 @@ section {
   background: #ffffff;
   box-shadow: 25px 25px 50px #ababab, -25px -25px 50px #ffffff;
 }
+
+/* @@@@@@@@@@@@@@@@@ About us @@@@@@@@@@@ */
+
+.aboutus-container {
+  /* border: 2px solid black; */
+  width: 50vw;
+  margin-top: 15vh;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 25px 25px 50px #ababab, -25px -25px 50px #ffffff;
+}

@@ -9,7 +9,7 @@ export default function ContactUs() {
             <div className="contact-container">
                 <div className="map-container">
                 <div className="map-holder">
-                    <img src="https://i.imgur.com/Ti5wYZe.png"></img>
+                    <img src="https://i.imgur.com/Ti5wYZe.png" style={{borderRadius: "6px"}}></img>
                 </div>
                 <div>
                     <h2 style={{textAlign: "left", textDecoration: "underline"}}>Radius Circles</h2>

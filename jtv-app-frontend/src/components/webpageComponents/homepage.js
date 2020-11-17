@@ -19,7 +19,7 @@ export default function homepage() {
             <div className="card-container">
                 <h1>Steps to a clean ride!</h1>
                 <CardDeck>
-                    <Card style={{ width: '10rem' }}>
+                    <Card style={{ width: '18rem' }}>
                         <div className="card-step"><div className="holder">1</div></div>
                         <Card.Body>
                             <Card.Title style={{ fontSize: '30px', fontWeight: 'bold' }}>Schedule</Card.Title>
