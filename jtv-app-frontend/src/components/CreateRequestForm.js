@@ -71,7 +71,7 @@ class CreateRequestForm extends Component {
                       {"   " + "Schedule a Detail"}
                     </label>
                   </Grid>
-                  {values.requestTypeId === "2" ?
+                  {values.type_id === "2" ?
                     <>
                       <Grid container xs="12" spacing="2" margin-bottom="9">
                         <Grid item>
