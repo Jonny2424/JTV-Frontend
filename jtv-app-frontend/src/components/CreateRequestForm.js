@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { postRequest } from '../services/requests_api_helper';
 import { Formik, Form, Field } from "formik";
 import { TextField, MenuItem, Grid, Button } from '@material-ui/core';
-import * as Yup from "yup";
 
 
 class CreateRequestForm extends Component {
