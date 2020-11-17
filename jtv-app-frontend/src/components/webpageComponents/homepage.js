@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import { Button, Jumbotron, Card, CardDeck } from 'react-bootstrap';
 
-export default function homepage() {
+export default function Homepage() {
     return (
         <>
             <Header />
