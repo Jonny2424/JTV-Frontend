@@ -1,4 +1,8 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -129,7 +133,7 @@ body .bg-dark {
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-.package-container{
+.package-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -182,7 +186,7 @@ section {
 }
 
 .card_red, .card_red .title .fa {
-  background: linear-gradient(-45deg,#cda632, #cd7f32 , #cd6532);
+  background: linear-gradient(-45deg, #cda632, #cd7f32, #cd6532);
 }
 
 .card_violet, .card_violet .title .fa {
@@ -271,4 +275,31 @@ section {
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+/* @@@@@@@@@@@@@@@@@ contact form @@@@@@@@@@@ */
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15vh;
+  /* border: 2px solid black; */
+  width: 100%;
+}
+
+.form-holder {
+  /* border: 2px solid black; */
+  width: 50vw;
+  padding: 10px;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 25px 25px 50px #ababab, -25px -25px 50px #ffffff;
+}
+
+.map-container {
+  /* border: 2px solid black; */
+  padding: 5px;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 25px 25px 50px #ababab, -25px -25px 50px #ffffff;
 }

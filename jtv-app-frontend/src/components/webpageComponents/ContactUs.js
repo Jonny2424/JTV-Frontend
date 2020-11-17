@@ -1,20 +1,29 @@
 import React from 'react';
 import Header from './Header';
 import CreateRequestForm from '../CreateRequestForm';
-import { postRequest } from '../../services/requests_api_helper';
 
 export default function ContactUs() {
-
-    // const createRequest = async (e, requestData) => {
-    //     e.preventDefault();
-    //     const newRequest = await postRequest(requestData);
-    //     return newRequest
-    // }
-
     return (
         <>
             <Header />
-            <CreateRequestForm  />
+            <div className="contact-container">
+                <div className="map-container">
+                <div className="map-holder">
+                    <img src="https://i.imgur.com/Ti5wYZe.png"></img>
+                </div>
+                <div>
+                    <h2 style={{textAlign: "left", textDecoration: "underline"}}>Radius Circles</h2>
+                    <ul style={{textAlign: "left"}}>
+                        <li>Red: 10 miles * extra fee</li>
+                        <li>Yellow: 5 miles</li>
+                        <li>Green: 2.5 miles</li>
+                    </ul>
+                </div>
+                </div>
+                <CreateRequestForm />
+            </div>
+
+
         </>
     )
 }

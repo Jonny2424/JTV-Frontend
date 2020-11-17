@@ -37,13 +37,14 @@ class CreateRequestForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-holder">
           <Formik initialValues={this.state} onSubmit={(values) => {
             console.log(values)
             this.createRequest(values)
           }}>
             {({ values }) => (
               <Form>
+                <h1 style={{textAlign: "left"}}>Contact Form</h1>
                 <Grid container xs="12" spacing="2">
                   <Grid item>
                     <Field name="request_Fname" as={TextField} variant="outlined" label="First Name" />
@@ -106,16 +107,11 @@ class CreateRequestForm extends Component {
                       </Grid>
                     </>
                     : null}
-                    <Grid container xs="12" spacing="2" style={{ "marginTop": 10 }}>
-                      <Grid item >
-                    <Button type="submit" variant="outlined" color="success">
-                  Submit!
-                </Button>
-                    </Grid>
-                    
-                </Grid>
                 </Grid>
                 {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
+                <Button type="submit" variant="outlined" color="success" style={{ "marginTop": 50 }}>
+                  Submit!
+                </Button>
               </Form>
             )}
           </Formik>
