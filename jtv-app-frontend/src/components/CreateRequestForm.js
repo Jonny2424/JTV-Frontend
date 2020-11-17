@@ -10,16 +10,16 @@ class CreateRequestForm extends Component {
     super(props);
 
     this.state = {
-      request_Fname: '',
-      request_Lname: '',
-      request_email: '',
-      request_car_year: null,
-      request_car_make: '',
-      request_car_model: '',
-      request_msg: '',
-      request_date: '',
-      requestTypeId: null,
-      workTypeId: 1
+      fname: '',
+      lname: '',
+      email: '',
+      car_year: null,
+      car_make: '',
+      car_model: '',
+      msg: '',
+      date: '',
+      type_id: null,
+      work_type_id: 1
     }
   }
 
@@ -46,28 +46,28 @@ class CreateRequestForm extends Component {
                 <h1 style={{textAlign: "left"}}>Contact Form</h1>
                 <Grid container xs="12" spacing="2">
                   <Grid item>
-                    <Field name="request_Fname" as={TextField} variant="outlined" label="First Name" />
+                    <Field name="fname" as={TextField} variant="outlined" label="First Name" />
                   </Grid>
                   <Grid item>
-                    <Field name="request_Lname" as={TextField} variant="outlined" label="Last Name" />
+                    <Field name="lname" as={TextField} variant="outlined" label="Last Name" />
                   </Grid>
                   <Grid item>
-                    <Field name="request_email" as={TextField} variant="outlined" label="Email" />
+                    <Field name="email" as={TextField} variant="outlined" label="Email" />
                   </Grid>
                   <Grid item>
-                    <Field name="request_msg" as={TextField} variant="outlined" label="Message" multiline rows={1} rowsMax={8} />
+                    <Field name="msg" as={TextField} variant="outlined" label="Message" multiline rows={1} rowsMax={8} />
                   </Grid>
                 </Grid>
                 <Grid container xs="12" spacing="2">
                   <Grid item>
                     <label>
-                      <Field type="radio" name="requestTypeId" value="1" />
+                      <Field type="radio" name="type_id" value="1" />
                       {"   " + "Request Info"}
                     </label>
                   </Grid>
                   <Grid item>
                     <label>
-                      <Field type="radio" name="requestTypeId" value="2" />
+                      <Field type="radio" name="type_id" value="2" />
                       {"   " + "Schedule a Detail"}
                     </label>
                   </Grid>
@@ -75,19 +75,19 @@ class CreateRequestForm extends Component {
                     <>
                       <Grid container xs="12" spacing="2" margin-bottom="9">
                         <Grid item>
-                          <Field name="request_car_year" type="number" as={TextField} variant="outlined" label="Car Year" />
+                          <Field name="car_year" type="number" as={TextField} variant="outlined" label="Car Year" />
                         </Grid>
                         <Grid item>
-                          <Field name="request_car_make" as={TextField} variant="outlined" label="Car Make" />
+                          <Field name="car_make" as={TextField} variant="outlined" label="Car Make" />
                         </Grid>
                         <Grid item>
-                          <Field name="request_car_model" as={TextField} variant="outlined" label="Car Model" />
+                          <Field name="car_model" as={TextField} variant="outlined" label="Car Model" />
                         </Grid>
                         <Grid item>
                           <Field
                             as={TextField}
                             label="Preferred Drop Off"
-                            name="request_date"
+                            name="date"
                             type="date"
                             variant="outlined"
                             defaultValue="mm/dd/yyyy"
@@ -96,7 +96,7 @@ class CreateRequestForm extends Component {
                             }} />
                         </Grid>
                         <Grid item>
-                          <Field name="workTypeId" as={TextField} variant="outlined" label="Package" select style={{ "width": "8vw" }}>
+                          <Field name="work_type_id" as={TextField} variant="outlined" label="Package" select style={{ "width": "8vw" }}>
                             <MenuItem defaultValue>Select One</MenuItem>
                             <MenuItem value={1}>Bronze</MenuItem>
                             <MenuItem value={2}>Silver</MenuItem>
