@@ -19,7 +19,7 @@ export default function homepage() {
             <div className="card-container">
                 <h1>Steps to a clean ride!</h1>
                 <CardDeck>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '10rem' }}>
                         <div className="card-step"><div className="holder">1</div></div>
                         <Card.Body>
                             <Card.Title style={{ fontSize: '30px', fontWeight: 'bold' }}>Schedule</Card.Title>
@@ -30,7 +30,6 @@ export default function homepage() {
                         <Card.Body>
                             <Card.Title style={{ fontSize: '30px', fontWeight: 'bold' }}>Plan</Card.Title>
                         </Card.Body>
-                        <Button variant="outline-success" href="/contact">Schedule Now!</Button>
                     </Card>
                     <Card style={{ width: '18rem' }}>
                         <div className="card-step"><div className="holder">3</div></div>
@@ -39,6 +38,7 @@ export default function homepage() {
                         </Card.Body>
                     </Card>
                 </CardDeck>
+                <Button style={{ marginTop: '50px'}} variant="outline-success" href="/contact">Schedule Now!</Button>
             </div>
         </>
     )

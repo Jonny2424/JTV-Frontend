@@ -3,6 +3,7 @@ import { withRouter, Route } from 'react-router-dom';
 import { getRequests, destroyRequest, putRequest } from '../services/requests_api_helper';
 import RequestList from './RequestList';
 import UpdateRequestForm from './UpdateRequestForm';
+import { CSVLink, CSVDownload } from "react-csv";
 
 
 class Requests extends Component {
@@ -40,8 +41,16 @@ class Requests extends Component {
         return (
             <div>
                 <Route exact path="/requests" render={() => (
-                    <RequestList requests={this.state.requests} deleteRequests={this.deleteRequests}/>
+                    <RequestList requests={this.state.requests} deleteRequests={this.deleteRequests} />
                 )} />
+                <CSVLink
+                    filename={"RequestList.csv"}
+                    color="primary"
+                    style={{ float: "right", marginTop: "10px", marginRight: "5px" }}
+                    className="btn btn-primary"
+                    data={this.state.requests}>
+                    Download CSV
+                </CSVLink>
                 <Route path="/requests/:id/update" render={(props) => (
                     <UpdateRequestForm
                         requests={this.state.requests}
