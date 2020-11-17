@@ -6,9 +6,10 @@ import LoginForm from './components/LoginForm';
 import Requests from './components/RequestsContainer';
 import { registerUser, loginUser, verifyUser } from './services/auth_api_helper';
 import Homepage from './components/webpageComponents/Homepage';
-import Detailing from './components/webpageComponents/Detailing';
+import Packages from './components/webpageComponents/Packages';
 import AboutUs from './components/webpageComponents/AboutUs';
 import ContactUs from './components/webpageComponents/ContactUs';
+import Footer from './components/webpageComponents/Footer';
 
 
 class App extends Component {
@@ -43,7 +44,6 @@ class App extends Component {
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser });
-      // this.props.history.push('/posts');
     }
   }
 
@@ -59,21 +59,21 @@ class App extends Component {
         {this.state.currentUser ?
           <div>
             <h1>Welcome Back {this.state.currentUser.username}!</h1>
+            <button onClick={this.handleLogout} style={{ float: "right", marginRight: "1vw" }}>Logout</button>
             <Route path="/requests" render={() => { return <Requests /> }} />
             <br></br>
-            <button onClick={this.handleLogout}>Logout</button>
           </div>
           :
           <>
             <Route exact path="/" render={() => { return <Homepage /> }} />
-            <Route path="/detailing" render={() => { return <Detailing /> }} />
+            <Route path="/packages" render={() => { return <Packages /> }} />
             <Route path="/aboutus" render={() => { return <AboutUs /> }} />
             <Route path="/contact" render={() => { return <ContactUs /> }} />
             <Route path="/admin" render={() => { return <LoginForm handleLogin={this.handleLogin} /> }} />
             {/* <RegisterForm handleRegister={this.handleRegister}/> */}
           </>
         }
-
+        <Footer />
       </div>
     );
   }
