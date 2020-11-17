@@ -137,7 +137,7 @@ body .bg-dark {
 }
 
 #package {
-  margin-top: 10vh;
+  margin-top: 3vh;
   padding: 20px;
   width: 70vw;
   height: 17vh;
@@ -160,9 +160,9 @@ body {
 
 section {
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   box-sizing: border-box;
-  padding: 140px 0;
+  padding: 50px 0;
 }
 
 .card {

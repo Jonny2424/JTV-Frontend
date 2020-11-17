@@ -9,7 +9,7 @@ import Homepage from './components/webpageComponents/Homepage';
 import Packages from './components/webpageComponents/Packages';
 import AboutUs from './components/webpageComponents/AboutUs';
 import ContactUs from './components/webpageComponents/ContactUs';
-import { CSVLink, CSVDownload } from "react-csv";
+import Footer from './components/webpageComponents/Footer';
 
 
 class App extends Component {
@@ -73,7 +73,7 @@ class App extends Component {
             {/* <RegisterForm handleRegister={this.handleRegister}/> */}
           </>
         }
-
+        <Footer />
       </div>
     );
   }
