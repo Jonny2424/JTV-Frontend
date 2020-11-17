@@ -11,9 +11,9 @@ export default function Packages() {
             </div>
             <section>
                 <div class="container-fluid">
-                    <div class="container">
+                    <div class="container" style={{width: "65vw"}}>
                         <div class="row">
-                            <div class="col-sm-4" style={{marginLeft: "10px", marginRight: "10px"}}>
+                            <div class="col-sm-4" >
                                 <div class="card card_red text-center">
                                     <div class="title">
                                         <i class="fa fa-paper-plane" aria-hidden="true"></i>
