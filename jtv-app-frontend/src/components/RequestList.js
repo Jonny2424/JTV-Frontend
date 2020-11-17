@@ -14,17 +14,17 @@ export default function RequestList(props) {
         return props.requests.map((item, index) => {
             return (
                 <tr key={index}>
-                        <td>{item.request_Fname}</td>
-                        <td>{item.request_Lname}</td>
-                        <td>{item.request_email}</td>
-                        <td>{item.request_car_year}</td>
-                        <td>{item.request_car_make}</td>
-                        <td>{item.request_car_model}</td>
-                        <td>{item.request_msg}</td>
-                        <td>{item.request_date}</td>
-                        <td>{item.requestStatusId}</td>
-                        <td>{item.requestTypeId}</td>
-                        <td>{item.workTypeId}</td>
+                        <td>{item.fname}</td>
+                        <td>{item.lname}</td>
+                        <td>{item.email}</td>
+                        <td>{item.car_year}</td>
+                        <td>{item.car_make}</td>
+                        <td>{item.car_model}</td>
+                        <td>{item.msg}</td>
+                        <td>{item.date}</td>
+                        <td>{item.status_id}</td>
+                        <td>{item.type_id}</td>
+                        <td>{item.work_type_id}</td>
                         <td>{item.createdAt}</td>
                         <td>{item.updatedAt}</td>
                         <td><Link to={`/requests/${item.id}/update`}><button>Update</button></Link></td>

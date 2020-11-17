@@ -5,8 +5,8 @@ class UpdateRequestFrom extends Component {
     super(props);
 
     this.state = {
-        requestStatusId: '',
-        request_date: ''
+        status_id: '',
+        date: ''
     }
   }
 
@@ -20,8 +20,8 @@ class UpdateRequestFrom extends Component {
                 request.id === parseInt(this.props.requestId)
               );
     this.setState({
-        requestStatusId: requestToEdit.requestStatusId,
-        request_date: requestToEdit.request_date
+        status_id: requestToEdit.status_id,
+        date: requestToEdit.date
     })
   }
 
@@ -36,8 +36,8 @@ class UpdateRequestFrom extends Component {
          {"Adjust date for work request: "}
         <input
           type="text"
-          name="request_date"
-          value={this.state.request_date}
+          name="date"
+          value={this.state.date}
           onChange={this.handleChange}
         />
         </label>
@@ -45,8 +45,8 @@ class UpdateRequestFrom extends Component {
          {"Change Status Id: "}
         <input
           type="text"
-          name="requestStatusId"
-          value={this.state.requestStatusId}
+          name="status_id"
+          value={this.state.status_id}
           onChange={this.handleChange}
         />
         </label>

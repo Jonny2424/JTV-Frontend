@@ -70,7 +70,7 @@ class App extends Component {
             <Route path="/aboutus" render={() => { return <AboutUs /> }} />
             <Route path="/contact" render={() => { return <ContactUs /> }} />
             <Route path="/admin" render={() => { return <LoginForm handleLogin={this.handleLogin} /> }} />
-            {/* <RegisterForm handleRegister={this.handleRegister}/> */}
+            <RegisterForm handleRegister={this.handleRegister}/>
           </>
         }
         <Footer />
