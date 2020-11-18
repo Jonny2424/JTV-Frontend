@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// Form for logging into the admin side
 
 class LoginForm extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class LoginForm extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    // aka const name = e.target.name; const value = e.target.value;
     this.setState({
       [name]: value
     })

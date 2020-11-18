@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// API calls for the requests data tables
 const api = axios.create({
     baseURL: "https://jtv-auto-detail.herokuapp.com"
 })

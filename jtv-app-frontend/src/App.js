@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-import { Link, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import Requests from './components/RequestsContainer';
@@ -51,7 +51,8 @@ class App extends Component {
   componentDidMount() {
     this.handleVerify();
   }
-
+// If user is logged in the first part of the ternary is used. It will show the
+// requests pulled from the backend. If not logged in, the other pages will show.
 
   render() {
     return (
@@ -70,6 +71,7 @@ class App extends Component {
             <Route path="/aboutus" render={() => { return <AboutUs /> }} />
             <Route path="/contact" render={() => { return <ContactUs /> }} />
             <Route path="/admin" render={() => { return <LoginForm handleLogin={this.handleLogin} /> }} />
+            {/* This code is commented out for registering the Admin if the backend is wiped */}
             {/* <RegisterForm handleRegister={this.handleRegister}/> */}
           </>
         }

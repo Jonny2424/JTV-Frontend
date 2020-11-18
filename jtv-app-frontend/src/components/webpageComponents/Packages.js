@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
-
+// 3 packages are listed using bootstrap through cards. A nice hover effect is
+// added to focus on which package is chosen.
 export default function Packages() {
     return (
         <>

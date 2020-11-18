@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+//Form used for admin to change requests dates and the status of the request
 class UpdateRequestFrom extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +16,7 @@ class UpdateRequestFrom extends Component {
   }
 
   componentDidMount() {
+    // finds the two porperties being edited and updates their states for the form
     const requestToEdit = this.props.requests.find(request =>
                 request.id === parseInt(this.props.requestId)
               );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+//simple register form for making a new user. Admin, in my case. This file is
+//turned on or off if I need another Admin profile
 class RegisterForm extends Component {
     constructor(props) {
         super(props);

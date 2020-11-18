@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import { Button, Jumbotron, Card, CardDeck } from 'react-bootstrap';
-
+//Bootstrap has some handy components to make a page look good. The jumbotron is
+//a large center div to display info. The cards and card deck allw me to show
+//the simple steps in scheduling a detail.
 export default function Homepage() {
     return (
         <>

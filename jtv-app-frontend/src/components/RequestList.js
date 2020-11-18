@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function RequestList(props) {
-
+//Used a table to list the requests. Header could be cleaner using a map
+//function but ohwell...
+//Links and buttons were able to be nested in the tables as well.
     function renderTableHeader() {
         let header = ['First Name','Last Name','Email','C.Year', 'C.Make','C.Model','Msg','Req Date','Req Status','Req Type','Work Type','Created At','Updated At', 'Update Status','Delete']
         return header.map((key, index) => {

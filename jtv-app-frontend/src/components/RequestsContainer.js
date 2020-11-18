@@ -3,7 +3,7 @@ import { withRouter, Route } from 'react-router-dom';
 import { getRequests, destroyRequest, putRequest } from '../services/requests_api_helper';
 import RequestList from './RequestList';
 import UpdateRequestForm from './UpdateRequestForm';
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 
 class Requests extends Component {
@@ -43,6 +43,7 @@ class Requests extends Component {
                 <Route exact path="/requests" render={() => (
                     <RequestList requests={this.state.requests} deleteRequests={this.deleteRequests} />
                 )} />
+                {/* Very handy code to allow admin to download the table to a CSV file */}
                 <CSVLink
                     filename={"RequestList.csv"}
                     color="primary"

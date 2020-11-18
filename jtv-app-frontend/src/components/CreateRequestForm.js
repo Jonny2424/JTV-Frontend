@@ -4,6 +4,11 @@ import { postRequest } from '../services/requests_api_helper';
 import { Formik, Form, Field } from "formik";
 import { TextField, MenuItem, Grid, Button } from '@material-ui/core';
 
+//Form for creating the request on the user side.
+//Formik is used here to generate the form. It handles the state in a simpler
+//way
+// Material UI was used to create the form boxes
+
 
 class CreateRequestForm extends Component {
   constructor(props) {
@@ -38,7 +43,6 @@ class CreateRequestForm extends Component {
     return (
       <div className="form-holder">
           <Formik initialValues={this.state} onSubmit={(values) => {
-            console.log(values)
             this.createRequest(values)
           }}>
             {({ values }) => (
@@ -71,6 +75,7 @@ class CreateRequestForm extends Component {
                       {"   " + "Schedule a Detail"}
                     </label>
                   </Grid>
+                  {/* Ternary used for showing more inputs. If the user chooses to schedule a detail, then more boxes appear for car info and a date input */}
                   {values.type_id === "2" ?
                     <>
                       <Grid container xs="12" spacing="2" margin-bottom="9">
