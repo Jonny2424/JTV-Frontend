@@ -50,7 +50,7 @@ export default function Packages() {
                                             <li><i class="fa fa-times" aria-hidden="true"></i>Plastic Trim Restoration</li>
                                         </ul>
                                     </div>
-                                    <a href="#">Order Now</a>
+                                    <a href="/contact">Order Now</a>
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -71,7 +71,7 @@ export default function Packages() {
                                             <li><i class="fa fa-times" aria-hidden="true"></i>6+ Month Machine Polish</li>
                                         </ul>
                                     </div>
-                                    <a href="#">Order Now</a>
+                                    <a href="/contact">Order Now</a>
                                 </div>
                             </div>
                         </div>
